@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 type Order interface {
 	Execute()
@@ -57,6 +60,7 @@ func (b *Broker) TakeOrder(order Order) {
 
 func (b *Broker) PlaceOrder() {
 	for _, o := range b.OrderList {
+		fmt.Println(reflect.TypeOf(o))
 		o.Execute()
 	}
 	b.OrderList = []Order{}
@@ -67,8 +71,8 @@ func main() {
 		Name:     "abc",
 		Quantity: 10,
 	}
-	buyStock := NewSellStock(abcStock)
-	sellStock := NewBuyStock(abcStock)
+	buyStock := NewBuyStock(abcStock)
+	sellStock := NewSellStock(abcStock)
 
 	broker := &Broker{
 		OrderList: []Order{},

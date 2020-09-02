@@ -53,11 +53,14 @@ func (r *RedShapeDecorator) Draw() {
 
 func main() {
 	circle := &Circle{}
+	rectangle := &Rectangle{}
 	redCircle := NewRedShapeDecorator(&Circle{})
 	redRectangle := NewRedShapeDecorator(&Rectangle{})
 
 	fmt.Println("===")
 	circle.Draw()
+	fmt.Println("===")
+	rectangle.Draw()
 	fmt.Println("===")
 	redCircle.Draw()
 	fmt.Println("===")
