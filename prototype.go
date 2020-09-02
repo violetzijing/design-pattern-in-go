@@ -40,6 +40,7 @@ func NewRectangle() *Rectangle {
 
 func (r *Rectangle) Draw() {
 	fmt.Println("draw Rectangle")
+	fmt.Println("id: ", r.Shape.ID)
 }
 
 type Square struct {
@@ -56,6 +57,7 @@ func NewSquare() *Square {
 
 func (s *Square) Draw() {
 	fmt.Println("draw Square")
+	fmt.Println("id: ", s.Shape.ID)
 }
 
 type Circle struct {
@@ -72,6 +74,7 @@ func NewCircle() *Circle {
 
 func (c *Circle) Draw() {
 	fmt.Println("draw Circle")
+	fmt.Println("id: ", c.Shape.ID)
 }
 
 func LoadCache() map[string]interface{} {
